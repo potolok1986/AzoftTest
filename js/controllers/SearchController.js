@@ -1,0 +1,3 @@
+AzofTest.controller("SearchController", function () {
+
+});
