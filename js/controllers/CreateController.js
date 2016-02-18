@@ -1,3 +1,3 @@
-AzofTest.controller("CreateController", function () {
+AzoftTest.controller("CreateController", function () {
 
 });

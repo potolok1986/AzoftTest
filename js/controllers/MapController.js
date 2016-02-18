@@ -1,3 +1,3 @@
-AzofTest.controller("MapController", function () {
+AzoftTest.controller("MapController", function () {
 
 });

@@ -1,5 +1,5 @@
-var AzofTest = angular.module("map", ["ngRoute"]);
-AzofTest.config(function ($routeProvider) {
+var AzoftTest = angular.module("map", ["ngRoute"]);
+AzoftTest.config(function ($routeProvider) {
 	$routeProvider.when(
 		"/search", {
 			templateUrl: 'views/search.html',

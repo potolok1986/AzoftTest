@@ -1,3 +1,3 @@
-AzofTest.controller("SearchController", function () {
+AzoftTest.controller("SearchController", function () {
 
 });
