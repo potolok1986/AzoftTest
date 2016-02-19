@@ -11,14 +11,14 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="pageContent">
-                <h1 class="text-center"> Тестовое задание Azoft</h1>
+                <h1 class="text-center page-header"> Тестовое задание Azoft</h1>
                 <nav class="btn-group">
                     <a href="#/search" class="btn btn-default">Поиск</a>
                     <a href="#/create" class="btn btn-default">Создание</a>
                     <a href="#/map" class="btn btn-default">Карта</a>
-                    <a href="#" class="btn btn-default">Просмотр</a>
+                    <a href="#/list" class="btn btn-default">Список</a>
                 </nav>
-                <ng-view>
+                <ng-view class="row">
 
                 </ng-view>
             </div>
@@ -32,4 +32,5 @@
 <script src="./js/controllers/CreateController.js"></script>
 <script src="./js/controllers/MapController.js"></script>
 <script src="./js/controllers/SearchController.js"></script>
+<script src="./js/controllers/ListController.js"></script>
 </html>

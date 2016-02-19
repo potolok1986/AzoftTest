@@ -1,0 +1,15 @@
+<section ng-controller="ListController as list">
+    <h3 class="page-header"> Список всех точек на карте</h3>
+    <div class="pointList col-sm-8 col-xs-12">
+        <div class="pointList_wrap">
+            <ul class="pointList_row">
+                <li ng-repeat="storage in list.content">
+                    <a href="#/map/{{storage}}">
+                        <p class="pointName">Название точки на карте: {{storage.name}}</p>
+                        <p class="pointAddress"> Адрес места на карте {{storage.address}}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
