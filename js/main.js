@@ -45,6 +45,9 @@ angular.module("myStorage", [])
 			addToStorage: function (data) {
 				var result = true;
 				if (typeof data.X === "number" && typeof data.Y === "number" && data.name.length && data.address.length) {
+					if(!_storage){
+						_storage = [];
+					}					
 					_storage.push({
 						name: data.name,
 						address: data.address,

@@ -1,7 +1,9 @@
 AzoftTest.controller("CreateController", function (Storage) {
-	this.createPoint = function () {
-		if(Storage.addToStorage(this)){
+	this.createPoint = function (point) {		
+		if(Storage.addToStorage(point)){			
 			this.name = "";
+			this.create = true;
 		}
-	}
+	};
+
 });
