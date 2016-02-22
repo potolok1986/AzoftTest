@@ -15,8 +15,11 @@
             Слишко много символов!
             <b> Лишних {{point.name.length - point.maxLength}}</b>
         </div>
+        <div ng-hide ="point.X && point.Y && point.address" class="alert alert-info" >
+            Кликните по карте для определения координат и адреса
+        </div>
         <div class="row">
-            <label for="pointName" class="col-md-3 col-sm-6 control-label">Название места на карте</label>
+            <label for="pointName" class="col-md-3 col-sm-6 control-label">Название места на карте*</label>
             <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                     <input type="text" class="form-control" id="pointName" placeholder="Название"  ng-model="point.name" ng-focus="point.create = false" required>

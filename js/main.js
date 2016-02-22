@@ -33,7 +33,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 					localStorage.setItem(_config.STORAGE_NAME, angular.toJson(_storage));
 				}
 				catch (e) {
-					alert("Не получилось добавить в локальное хранилище");
+					alert("Не получилось добавить в локальное хранилище: " + e);
 				}
 			};
 		return {
@@ -68,8 +68,12 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 			responseStorage: function () {
 				try {
 					_storage = JSON.parse(localStorage.getItem(_config.STORAGE_NAME));
-				} catch (e) {
-					_storage = "";
+					if(!_storage){
+						_storage = [];
+					}
+				} catch (e) {		
+					alert("Ошибка обращения к LocalStorage: " + e);
+					_storage = [];
 				}
 				return _storage;
 			}
@@ -117,7 +121,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 			addPoint: function (obj) {
 				var ObjectInitialize = _initialize();
 				if (obj && ObjectInitialize) {
-					ObjectInitialize.event.addListener(ObjectInitialize.map, "click", function (overlay, latlng) {
+					ObjectInitialize.event.addListener(ObjectInitialize.map, "click", function (overlay, latlng) {						
 						if (overlay) {
 							return;
 						}
