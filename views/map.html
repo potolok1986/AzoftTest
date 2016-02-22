@@ -3,12 +3,12 @@
     <a href="#/create" class="btn btn-default">Создание</a>
     <a href="#/list" class="btn btn-default">Список</a>
 </nav>
-<section ng-controller="MapController">
+<section ng-controller="MapController" class="row">
     <h3 class="page-header"> Вы выбрали: <b>{{data.name}}</b></h3>
     <p>Находится по адресу: <b>{{data.address}}</b></p>
     <p>Координата Х: <b>{{data.coordinateX}}</b></p>
     <p>Координата У: <b>{{data.coordinateY}}</b></p>
-    <div id="map_canvas">
+    <div id="map_canvas" >
 
     </div>
 </section>

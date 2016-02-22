@@ -24,7 +24,8 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 	}])
 	.factory("Storage", function () {
 		var _config = {
-				STORAGE_NAME: "pointStorage"
+				STORAGE_NAME: "pointStorage",
+				MAX_LENGTH: 20
 			},
 			_storage = [],
 			_updateStorage = function () {
@@ -36,6 +37,12 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 				}
 			};
 		return {
+			setMaxLength: function (maxLength) {
+				_config.MAX_LENGTH = maxLength || _config.MAX_LENGTH
+			},
+			getMaxLength: function () {
+				return _config.MAX_LENGTH
+			},
 			setStorageName: function (storageName) {
 				_config.STORAGE_NAME = storageName || _config.STORAGE_NAME;
 			},
