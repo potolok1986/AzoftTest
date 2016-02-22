@@ -33,7 +33,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 					localStorage.setItem(_config.STORAGE_NAME, angular.toJson(_storage));
 				}
 				catch (e) {
-					alert("Не получилось добавить в локальное хранилище: " + e);
+					alert("Ошибка добавления в локальное хранилище: " + e);
 				}
 			};
 		return {
@@ -60,7 +60,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 					});
 					_updateStorage();
 				} else {
-					alert("Какая-то не разбериха с данными");
+					alert("Ошибка типа данных");
 					result = false;
 				}
 				return result;
@@ -81,6 +81,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 	})
 	.factory("GMap", ["$http",function ($http) {
 		var _config = {
+			// центр Новосибирска
 				LAT: 55.00518863585595,
 				LNG: 82.9361343383789,
 				ZOOM: 12,
@@ -134,7 +135,7 @@ var AzoftTest = angular.module("map_app", ["ngRoute","angucomplete-alt"])
 									obj.X = latlng.lat();
 									obj.Y = latlng.lng();
 								} else {
-									alert("не получилось получить координаты");
+									alert("Ошибка получения координат");
 								}
 							})
 							.error(function () {
