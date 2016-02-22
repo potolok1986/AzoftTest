@@ -1,3 +1,3 @@
-AzoftTest.controller("ListController", function (Storage) {	
+AzoftTest.controller("ListController", ["Storage",function (Storage) {	
 	this.content = Storage.responseStorage();
-});
+}]);

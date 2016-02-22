@@ -1,3 +1,23 @@
-<section ng-controller="SearchController">
-    <h1> Тут будет поиск </h1>
+<nav class="btn-group">
+    <a href="#/search" class="btn btn-default active">Поиск</a>
+    <a href="#/create" class="btn btn-default">Создание</a>
+    <a href="#/list" class="btn btn-default">Список</a>
+</nav>
+<section ng-controller="SearchController as search">
+    <h3 class="page-header"> Введите название точки:</h3>
+        <div class="col-sm-6">
+            <div angucomplete-alt
+                 placeholder="Поиск точки"
+                 maxlength="50"
+                 pause="100"
+                 selected-object="search.selectedPoint"
+                 local-data="search.point"
+                 search-fields="name"
+                 title-field="name"
+                 minlength="1"
+                 input-class="form-control form-control-small "
+                 match-class="highlight">
+            </div>
+        </div>
+        <a href="#/map/{{search.data}}" class="btn btn-primary" ng-disabled="!search.data">Показать</a>
 </section>

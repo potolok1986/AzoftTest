@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="map">
+<html lang="en" ng-app="map_app">
 <head>
     <meta charset="UTF-8">
     <title>Тестовое задание Azoft</title>
@@ -11,12 +11,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="pageContent">
-                <h1 class="text-center page-header"> Тестовое задание Azoft</h1>
-                <nav class="btn-group">
-                    <a href="#/search" class="btn btn-default">Поиск</a>
-                    <a href="#/create" class="btn btn-default">Создание</a>
-                    <a href="#/list" class="btn btn-default">Список</a>
-                </nav>
+                <h1 class="text-center page-header">Адресная книга</h1>
                 <ng-view class="row">
 
                 </ng-view>
@@ -27,9 +22,17 @@
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAzr2EBOXUKnm_jVnk0OJI7xSosDVG8KKPE1-m51RBrvYughuyMxQ-i1QfUnH94QxWIa6N4U6MouMmBA"></script>
+<!--
+Если нужно проверить каждый файл по отдельности то просто раскоментируйте это и закоментируйте <script src="./js/app.min.js"></script>
+
+<script src="./js/lib/autocomplite.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/controllers/CreateController.js"></script>
 <script src="./js/controllers/MapController.js"></script>
 <script src="./js/controllers/SearchController.js"></script>
 <script src="./js/controllers/ListController.js"></script>
+-->
+
+<script src="js/app.min.js"></script>
 </html>

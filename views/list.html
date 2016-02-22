@@ -1,3 +1,8 @@
+<nav class="btn-group">
+    <a href="#/search" class="btn btn-default">Поиск</a>
+    <a href="#/create" class="btn btn-default">Создание</a>
+    <a href="#/list" class="btn btn-default active">Список</a>
+</nav>
 <section ng-controller="ListController as list">
     <h3 class="page-header"> Список всех точек на карте</h3>
     <div class="pointList col-sm-8 col-xs-12">
@@ -5,8 +10,8 @@
             <ul class="pointList_row">
                 <li ng-repeat="data in list.content">
                     <a href="#/map/{{data}}">
-                        <p class="pointName">Название точки на карте: {{data.name}}</p>
-                        <p class="pointAddress"> Адрес места на карте {{data.address}}</p>
+                        <p class="pointName">Название точки: {{data.name}}</p>
+                        <p class="pointAddress"> Адрес точки на карте: {{data.address}}</p>
                     </a>
                 </li>
                 <li ng-hide="{{list.content}}" class="alert alert-danger">

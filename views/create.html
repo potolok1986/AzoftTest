@@ -1,33 +1,24 @@
+<nav class="btn-group">
+    <a href="#/search" class="btn btn-default">Поиск</a>
+    <a href="#/create" class="btn btn-default active">Создание</a>
+    <a href="#/list" class="btn btn-default">Список</a>
+</nav>
 <section ng-controller="CreateController as point" >
     <h3 class="page-header"> Создание новой точки на карте </h3>
-    <form name="createPoint"  ng-submit="point.createPoint(point)" class="row">
+    <form name="createPoint"  ng-submit="point.createPoint(point)" class="row  form-horizontal">
         <div ng-show ="point.create" class="alert alert-success" >
             Точка созданна успешно!
         </div>
-
         <div class="form-group col-sm-12">
-            <label for="pointName" class="col-sm-2 control-label">Название места на карте</label>
+            <label for="pointName" class="col-sm-3 control-label">Название места на карте</label>
             <div class="col-sm-6">
                 <input type="text" class="form-control" id="pointName" placeholder="Название" ng-model="point.name"  ng-focus="point.create = false" required>
             </div>
         </div>
-        <div class="form-group col-sm-12">
-            <label for="pointAddress" class="col-sm-2 control-label">Адрес точки на карте</label>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" id="pointAddress" placeholder="Адрес" ng-model="point.address" required>
-            </div>
-        </div>
-        <div class="form-group col-sm-12">
-            <label for="pointX" class="col-sm-2 control-label">Координата Х</label>
-            <div class="col-sm-6">
-                <input type="number" step="any" class="form-control" id="pointX" placeholder="Координата Х" ng-model="point.X" required>
-            </div>
-        </div>
-        <div class="form-group col-sm-12">
-            <label for="pointY" class="col-sm-2 control-label">Координата Х</label>
-            <div class="col-sm-6">
-                <input type="number" step="any" class="form-control" id="pointY" placeholder="Координата У" ng-model="point.Y" required>
-            </div>
+        <input type="hidden" ng-model="point.address" required>
+        <input type="hidden" ng-model="point.X" required>
+        <input type="hidden" ng-model="point.Y" required>
+        <div id="map_canvas" class="form-group col-sm-12">
         </div>
         <div class="form-group col-sm-12">
             <div class="col-sm-6">

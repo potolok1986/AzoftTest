@@ -1,8 +1,14 @@
+<nav class="btn-group">
+    <a href="#/search" class="btn btn-default">Поиск</a>
+    <a href="#/create" class="btn btn-default">Создание</a>
+    <a href="#/list" class="btn btn-default">Список</a>
+</nav>
 <section ng-controller="MapController">
-    <h1> Тут будет показанна карта </h1>
-    <p>{{data.name}}</p>
-    <p>{{data.address}}</p>
-    <p>{{data.coordinateX}}</p>
-    <p>{{data.coordinateY}}</p>
-    <p>{{test}}</p>
+    <h3 class="page-header"> Вы выбрали: <b>{{data.name}}</b></h3>
+    <p>Находится по адресу: <b>{{data.address}}</b></p>
+    <p>Координата Х: <b>{{data.coordinateX}}</b></p>
+    <p>Координата У: <b>{{data.coordinateY}}</b></p>
+    <div id="map_canvas">
+
+    </div>
 </section>
