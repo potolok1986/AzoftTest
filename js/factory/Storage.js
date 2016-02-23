@@ -1,6 +1,8 @@
 AzoftTest.factory("Storage", function () {
 	var _config = {
+			// имя локального хранилища
 			STORAGE_NAME: "pointStorage",
+			// максимальная длинна строки при создании точки и поиска этой точки
 			MAX_LENGTH: 20
 		},
 		_storage = [],
@@ -54,4 +56,4 @@ AzoftTest.factory("Storage", function () {
 			return _storage;
 		}
 	};
-})
+});
