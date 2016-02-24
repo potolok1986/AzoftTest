@@ -5,9 +5,7 @@
 </nav>
 <section ng-controller="CreateController as point">
     <h3 class="page-header"> Выберите любую точку на карте! </h3>
-
     <form name="createPoint"  ng-submit="point.createPoint(point)" class="col-md-12 form-horizontal">
-
         <div ng-show ="point.create" class="alert alert-success" >
             Точка созданна успешно!
         </div>
@@ -38,6 +36,5 @@
                 </div>
             </div>
         </div>
-
     </form>
 </section>
