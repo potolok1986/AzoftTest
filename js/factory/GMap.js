@@ -13,22 +13,15 @@ AzoftTest.factory("GMap", ["$http", function ($http) {
 		_initialize = function (lat, lng, zoom) {
 			var element = document.getElementById(_config.MAP_ID);
 			if (GBrowserIsCompatible() && element) {
-				var map = new GMap2(element);
+				var map = new google.maps.Map(element);
 				map.setCenter(new GLatLng(lat || _config.LAT, lng || _config.LNG), zoom || _config.ZOOM);
-				map.setUIToDefault();
-				return {
-					map: map,
-					event: GEvent
-				};
+				return  map;
 			} else {
 				alert("Не найден елемент " + _config.MAP_ID);
 				return false;
 			}
-		};
-	return {
-		setDISPLAY_ZOOM: function (displayZoom) {
-			_config.DISPLAY_ZOOM = parseInt(displayZoom || _config.DISPLAY_ZOOM);
-		},
+		},GoogleMap;
+	return {		
 		setMAP_ID: function (mapId) {
 			_config.MAP_ID = mapId || _config.MAP_ID;
 		},
@@ -41,10 +34,13 @@ AzoftTest.factory("GMap", ["$http", function ($http) {
 		setZOOM: function (zoom) {
 			_config.ZOOM = parseInt(zoom || _config.ZOOM);
 		},
+		setDISPLAY_ZOOM: function (displayZoom) {
+			_config.DISPLAY_ZOOM = parseInt(displayZoom || _config.DISPLAY_ZOOM);
+		},
 		addPoint: function (obj) {
-			var ObjectInitialize = _initialize();
-			if (obj && ObjectInitialize) {
-				ObjectInitialize.event.addListener(ObjectInitialize.map, "click", function (overlay, latlng) {
+			GoogleMap = _initialize();
+			if (obj && GoogleMap) {
+				GEvent.addListener(GoogleMap, "click", function (overlay, latlng) {
 					if (overlay) {
 						return;
 					}
@@ -53,7 +49,7 @@ AzoftTest.factory("GMap", ["$http", function ($http) {
 						.success(function (data) {
 							if (data.status === "OK" && data.results.length) {
 								var address = data.results[0].formatted_address;
-								ObjectInitialize.map.openInfoWindow(latlng, address);
+								GoogleMap.openInfoWindow(latlng, address);
 								obj.address = address;
 								obj.X = latlng.lat();
 								obj.Y = latlng.lng();
@@ -68,11 +64,12 @@ AzoftTest.factory("GMap", ["$http", function ($http) {
 			}
 		},
 		displayPoint: function (data) {
-			var ObjectInitialize = _initialize(data.coordinateX, data.coordinateY, _config.DISPLAY_ZOOM);
-			if (data && ObjectInitialize) {
-				var html = "Точка: " + data.name + "<br> Адрес: " + data.address,
+			GoogleMap = _initialize(data.coordinateX, data.coordinateY, _config.DISPLAY_ZOOM);
+			if (data && GoogleMap) {
+				var html = "Точка: " + data.name + "<br>" +
+					"Адрес: " + data.address,
 					uluru = {lat: parseFloat(data.coordinateX), lng: parseFloat(data.coordinateY)};
-				ObjectInitialize.map.openInfoWindow(uluru, html);
+				GoogleMap.openInfoWindow(uluru, html);
 			} else {
 				alert("Нет данных для отображения");
 			}
