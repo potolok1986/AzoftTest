@@ -45,7 +45,7 @@ AzoftTest.factory("GMap", ["$http", function ($http) {
 						return;
 					}
 					$http.post('http://maps.google.com/maps/api/geocode/json?latlng='
-						+ latlng.lat() + ',' + latlng.lng() + '&sensor=false')
+						+ latlng.lat() + ',' + latlng.lng() + '&sensor=false&language=ru')
 						.success(function (data) {
 							if (data.status === "OK" && data.results.length) {
 								var address = data.results[0].formatted_address;
